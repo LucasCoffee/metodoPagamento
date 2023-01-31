@@ -13,6 +13,13 @@ app.get("/", (req, res) => {
     res.send("Ola mundo")
 });
 
+app.post("/not", (req, res) => {
+
+    console.log(req.query);
+    res.send("OK")
+
+});
+
 app.get("/pagar", async (req, res) => {
 
     const requestKey = "" + Date.now();
@@ -43,9 +50,6 @@ app.get("/pagar", async (req, res) => {
     } catch (error) {
         return res.send(error.message)
     }
-
-
-
 });
 
 app.listen(3001, (req, res) => {
